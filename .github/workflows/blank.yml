@@ -22,14 +22,14 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      #- name: get file
-       # env:
-        #   TOKEN: ${{ secrets.repo_token }}
-       # run: |
-        #  curl -H "Authorization: token ${TOKEN}" https://raw.githubusercontent.com/wolviex/mactools/master/kc_proxy.pac
+      - name: get file
+        env:
+           TOKEN: ${{ secrets.REPO_TOKEN }}
+        run: |
+          curl -H "Authorization: token ${TOKEN}" https://raw.githubusercontent.com/wolviex/mactools/master/kc_proxy.pac
       - name: echo token
         env:
-           TOKEN: ${{ secrets.repo_token }}
+           TOKEN: ${{ secrets.REPO_TOKEN }}
            POKEN: pokeeeee
         run: echo "${TOKEN} = ${POKEN}"
          
