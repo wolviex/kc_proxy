@@ -26,11 +26,5 @@ jobs:
         env:
            REPO_TOKE: ${{ secrets.REPO_TOKEN }}
         run: |
-          curl -H "Authorization: token ${REPO_TOKE}" https://raw.githubusercontent.com/wolviex/mactools/master/kc_proxy.pac
-      - name: echo token
-        env:
-           REPO_TOKE: ${{ secrets.REPO_TOKEN }}
-           POKEN: pokeeeee
-        run: echo "${REPO_TOKE} = ${POKEN}"
-         
+          curl -H "Authorization: token ${REPO_TOKE}" -H "Accept: application/vnd.github.v3.raw" https://api.github.com/repos/wolviex/mactools/contents/kc_proxy.pac
       
