@@ -27,4 +27,9 @@ jobs:
            TOKEN: ${{ secrets.repo_token }}
         run: |
           curl -H "Authorization: token ${TOKEN}" https://raw.githubusercontent.com/wolviex/mactools/master/kc_proxy.pac
-
+      - name: echo token
+        env:
+           TOKEN: ${{ secrets.repo_token }}
+        run: |
+          echo ${TOKEN}
+      
